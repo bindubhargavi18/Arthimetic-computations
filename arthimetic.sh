@@ -4,6 +4,6 @@ read -p "Enter b value:" b
 read -p "Enter c value:" c
 echo $a,$b,$c
 
-result=$((c+a/b))
+result=$((a%b+c))
 
 echo $result
