@@ -12,5 +12,10 @@ results[comp1]="$r1"
 results[comp2]="$r2"
 results[comp3]="$r3"
 results[comp4]="$r4"
-echo "All keys:" ${!results[@]}
-echo "all results:" ${results[@]}
+
+for DATA in "${results[@]}"
+do
+	arr+=("${DATA##*:}")
+done
+echo "${arr[@]}"
+
