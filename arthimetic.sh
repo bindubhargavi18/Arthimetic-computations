@@ -18,4 +18,17 @@ do
 	arr+=("${DATA##*:}")
 done
 echo "${arr[@]}"
-
+temp=0
+for ((i=0;i<=3;i++))
+do
+	for((j=0;j<=3;j++))
+	do
+		if (( ${arr[i]}>${arr[j]} ))
+		then
+			temp=${arr[i]}
+			arr[i]=${arr[j]}
+			arr[j]=$temp
+		fi
+	done
+done
+echo "${arr[@]}"
